@@ -1,7 +1,9 @@
 {
-    "name": "RoyTheunissen.UnityPackage-Template",
-    "rootNamespace": "RoyTheunissen.UnityPackage-Template",
-    "references": [],
+    "name": "RoyTheunissen.UnityHaptics.Editor",
+    "rootNamespace": "RoyTheunissen.UnityHaptics",
+    "references": [
+        "GUID:1ab2c615de29a28499559ccd18bf09e5"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

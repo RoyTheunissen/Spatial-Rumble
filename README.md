@@ -50,7 +50,7 @@ The package is available on the [openupm registry](https://openupm.com). It's re
 
 🛑 <b><u>TO DO</u></b>
 ```
-openupm add com.roytheunissen.assetpalette
+openupm add com.roytheunissen.unity-haptics
 ```
 
 ### Manifest
@@ -58,13 +58,13 @@ You can also install via git URL by adding this entry in your **manifest.json**
 
 🛑 <b><u>TO DO</u></b>
 ```
-"com.roytheunissen.assetpalette": "https://github.com/RoyTheunissen/Asset-Palette.git"
+"com.roytheunissen.unity-haptics": "https://github.com/RoyTheunissen/Unity-Haptics.git"
 ```
 
 ### Unity Package Manager
 🛑 <b><u>TO DO</u></b>
 ```
-from Window->Package Manager, click on the + sign and Add from git: https://github.com/RoyTheunissen/Asset-Palette.git
+from Window->Package Manager, click on the + sign and Add from git: https://github.com/RoyTheunissen/Unity-Haptics.git
 ```
 
 

@@ -1,17 +1,19 @@
 {
-  "name": "com.roytheunissen.unitypackage-template",
-  "displayName": "Unity Package Template",
+  "name": "com.roytheunissen.unity-haptics",
+  "displayName": "Unity Haptics",
   "version": "0.0.1",
   "unity": "2021.3",
-  "description": "TO DO",
+  "description": "Open source system for emitting effects like vibration in a spatialized way",
   "keywords": [
-    "TO DO",
+    "haptics",
+	"rumble",
+	"vibration"
   ],
   "author": {
     "name": "Roy Theunissen",
     "url": "https://www.roytheunissen.com"
   },
-  "category": "TO DO",
+  "category": "haptics",
   "homepage": "https://github.com/RoyTheunissen/UnityPackage-Template",
   "repository": {
     "type": "git",
