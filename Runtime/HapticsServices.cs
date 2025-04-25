@@ -1,5 +1,6 @@
 using System;
 using RoyTheunissen.UnityHaptics.Rumbling;
+using UnityEngine;
 
 namespace RoyTheunissen.UnityHaptics
 {
@@ -14,7 +15,17 @@ namespace RoyTheunissen.UnityHaptics
         public static IRumbleService Rumble
         {
             get => cachedRumbleService;
-            set => cachedRumbleService = value;
+            set
+            {
+                if (cachedRumbleService != null && value != null)
+                {
+                    Debug.LogWarning($"You are overriding the Rumble service from an instance of " +
+                                     $"'{cachedRumbleService.GetType()}' to an instance of '{value.GetType()}'. " +
+                                     $"Is this intended?");
+                }
+                
+                cachedRumbleService = value;
+            }
         }
     }
 }

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: c015bf77e82996149878da198619be3f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rumbleRollOff: {fileID: 11400000, guid: e956d36eb92ed774eb37bc324cd82204, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

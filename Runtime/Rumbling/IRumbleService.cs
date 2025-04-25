@@ -5,6 +5,10 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     public interface IRumbleService
     {
         bool EnableRumble { get; set; }
+        
+        void Initialize();
+        void Cleanup();
+        
         void Pause(object owner);
         void Resume(object owner);
         void RegisterListener(RumbleListener listener);

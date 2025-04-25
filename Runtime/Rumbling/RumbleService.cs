@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using RoyTheunissen.UnityHaptics.Curves;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Haptics;
@@ -15,27 +14,30 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 {
     /// <summary>
     /// Responsible for managing the playback of rumble effects and passing them on to the hardware.
+    /// 
+    /// Default implementation as a pure C# object, so you can instantiate it and register it yourself without relying
+    /// on a MonoBehaviour.
     /// </summary>
-    public sealed class RumbleService : MonoBehaviour, IRumbleService
+    public class RumbleService : IRumbleService
     {
         public const float SpatialRadiusDefault = 15;
         
         public const float RumbleGracePeriod = 3;
 
-        [SerializeField] private CurveReference rumbleRollOff;
+        private readonly AnimationCurve rumbleRollOff;
         
-        private List<RumbleListener> listeners = new List<RumbleListener>();
+        private List<RumbleListener> listeners = new();
         private bool HasListener => listeners.Count > 0;
         private RumbleListener Listener => HasListener ? listeners[listeners.Count - 1] : null;
         
-        private List<IRumble> rumbles = new List<IRumble>();
+        private List<IRumble> rumbles = new();
         
-        private List<RumblePlayback> playbacks = new List<RumblePlayback>();
+        private List<RumblePlayback> playbacks = new();
         
-        private RumbleProperties rumblePropertiesCombined = new RumbleProperties();
-        private RumbleProperties rumblePropertiesIndividual = new RumbleProperties();
+        private RumbleProperties rumblePropertiesCombined;
+        private RumbleProperties rumblePropertiesIndividual;
         
-        private List<object> pausers = new List<object>();
+        private List<object> pausers = new();
 
         private float startTime;
 
@@ -49,8 +51,21 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
             set => enableRumble = value;
         }
 
-        private void Awake()
+        private bool isInitialized;
+        private bool isCleanedUp;
+
+        public RumbleService(AnimationCurve rumbleRollOff)
         {
+            this.rumbleRollOff = rumbleRollOff;
+        }
+
+        public void Initialize()
+        {
+            if (isInitialized)
+                return;
+
+            isInitialized = true;
+            
             startTime = Time.time;
             
 #if UNITY_EDITOR
@@ -63,8 +78,13 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 #endif // GRAPH_RUMBLE
         }
 
-        private void OnDestroy()
+        public void Cleanup()
         {
+            if (isCleanedUp)
+                return;
+
+            isCleanedUp = true;
+            
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.pauseStateChanged -= HandleEditorPauseStateChangedEvent;
 #endif // UNITY_EDITOR
@@ -224,7 +244,7 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         public PlaybackType Play<PlaybackType>(RumbleConfigBase config, Transform origin, float opacity)
             where PlaybackType : RumblePlayback, new()
         {
-            PlaybackType playback = new PlaybackType();
+            PlaybackType playback = new();
             playback.Initialize(config, origin, opacity);
             
             playbacks.Add(playback);

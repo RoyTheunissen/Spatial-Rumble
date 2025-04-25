@@ -1,0 +1,96 @@
+using RoyTheunissen.UnityHaptics.Curves;
+using UnityEngine;
+
+namespace RoyTheunissen.UnityHaptics.Rumbling
+{
+    /// <summary>
+    /// Responsible for managing the playback of rumble effects and passing them on to the hardware.
+    ///
+    /// Basically delegates the implementation completely to the pure C# version, but you don't have to care about that.
+    /// You can just add this component to your scene somewhere or on a service prefab and it'll work.
+    /// </summary>
+    public sealed class RumbleServiceComponent : MonoBehaviour, IRumbleService
+    {
+        [SerializeField] private bool autoRegister = true;
+        [SerializeField] private CurveAsset rumbleRollOff;
+
+        public bool EnableRumble
+        {
+            get => Instance.EnableRumble;
+            set => Instance.EnableRumble = value;
+        }
+
+        private bool isInitialized;
+
+        private RumbleService instance;
+        private RumbleService Instance => instance;
+
+        private void Awake()
+        {
+            Initialize();
+
+            if (autoRegister)
+                HapticsServices.Rumble = this;
+        }
+
+        private void OnDestroy()
+        {
+            if (autoRegister && ReferenceEquals(HapticsServices.Rumble, this))
+                HapticsServices.Rumble = null;
+            
+            Cleanup();
+        }
+
+        public void Initialize()
+        {
+            if (isInitialized)
+                return;
+
+            isInitialized = true;
+
+            instance = new RumbleService(rumbleRollOff);
+        }
+
+        public void Cleanup()
+        {
+            if (isInitialized)
+                instance.Cleanup();
+        }
+
+        public void Pause(object owner)
+        {
+            Instance.Pause(owner);
+        }
+
+        public void Resume(object owner)
+        {
+            Instance.Resume(owner);
+        }
+
+        public void RegisterListener(RumbleListener listener)
+        {
+            Instance.RegisterListener(listener);
+        }
+
+        public void UnregisterListener(RumbleListener listener)
+        {
+            Instance.UnregisterListener(listener);
+        }
+
+        public void AddRumble(IRumble rumble)
+        {
+            Instance.AddRumble(rumble);
+        }
+
+        public void RemoveRumble(IRumble rumble)
+        {
+            Instance.RemoveRumble(rumble);
+        }
+
+        public PlaybackType Play<PlaybackType>(RumbleConfigBase config, Transform origin, float opacity)
+            where PlaybackType : RumblePlayback, new()
+        {
+            return Instance.Play<PlaybackType>(config, origin, opacity);
+        }
+    }
+}
