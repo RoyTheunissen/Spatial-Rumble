@@ -16,7 +16,7 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     /// <summary>
     /// Responsible for managing the playback of rumble effects and passing them on to the hardware.
     /// </summary>
-    public sealed class RumbleService : MonoBehaviour
+    public sealed class RumbleService : MonoBehaviour, IRumbleService
     {
         public const float SpatialRadiusDefault = 15;
         
