@@ -9,20 +9,24 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     {
         public Vector3 Position => transform.position;
         
-        // TODO:
-        //private ServiceReference<RumbleService> rumbleService = new();
-        
-        private void Awake()
+        private void Start()
         {
-            // TODO:
-            //rumbleService.Reference.RegisterListener(this);
+            if (HapticsServices.Rumble == null)
+            {
+                Debug.LogError(
+                    $"Rumble Listener '{name}' tried to register itself at the rumble service, " +
+                    $"but no rumble service was registered at the Haptics Services class.", this);
+            }
+            else
+            {
+                HapticsServices.Rumble.RegisterListener(this);
+            }
         }
         
         private void OnDestroy()
         {
-            // TODO:
-            // if (rumbleService.HasCachedReference)
-            //     rumbleService.CachedReference.UnregisterListener(this);
+            if (HapticsServices.Rumble != null)
+                HapticsServices.Rumble.UnregisterListener(this);
         }
     }
 }

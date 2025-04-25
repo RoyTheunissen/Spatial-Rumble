@@ -43,9 +43,6 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         private float spatialRadiusOverride = RumbleService.SpatialRadiusDefault;
         public float SpatialRadius =>
             overrideSpatialRadius ? spatialRadiusOverride : RumbleService.SpatialRadiusDefault;
-        
-        // TODO:
-        //protected static ServiceReference<RumbleService> rumbleService = new();
     }
     
     public abstract class RumbleConfigGeneric<PlaybackType> : RumbleConfigBase
@@ -53,9 +50,7 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     {
         public PlaybackType Play(Transform origin = null, float opacity = 1.0f)
         {
-            // TODO:
-            //return rumbleService.Reference.Play<PlaybackType>(this, origin, opacity);
-            return default;
+            return HapticsServices.Rumble.Play<PlaybackType>(this, origin, opacity);
         }
     }
 }
