@@ -61,16 +61,15 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
             isInitialized = true;
 
             instance = new RumbleService(rumbleRollOff);
-            instance.Initialize();
         }
-
+        
         public void Cleanup()
         {
             if (isInitialized)
                 instance.Cleanup();
         }
 
-        private void Update()
+        public void Update()
         {
             Instance.Update();
         }

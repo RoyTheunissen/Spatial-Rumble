@@ -50,21 +50,12 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
             get => enableRumble;
             set => enableRumble = value;
         }
-
-        private bool isInitialized;
+        
         private bool isCleanedUp;
 
         public RumbleService(AnimationCurve rumbleRollOff)
         {
             this.rumbleRollOff = rumbleRollOff;
-        }
-
-        public void Initialize()
-        {
-            if (isInitialized)
-                return;
-
-            isInitialized = true;
             
             startTime = Time.time;
             
@@ -78,6 +69,10 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 #endif // GRAPH_RUMBLE
         }
 
+        /// <summary>
+        /// Cleans up after the rumble service. If you don't call this, the rumble values will not be cleared and rumble
+        /// will continue, even if you are exiting play mode in the editor.
+        /// </summary>
         public void Cleanup()
         {
             if (isCleanedUp)
