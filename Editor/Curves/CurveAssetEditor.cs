@@ -1,9 +1,10 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace RoyTheunissen.UnityHaptics.Curves
 {
     /// <summary>
-    /// 
+    /// Draws an animation curve to serve as an asset so you can re-use it.
     /// </summary>
     [CustomEditor(typeof(CurveAsset))]
     public class CurveAssetEditor : Editor 
@@ -17,11 +18,9 @@ namespace RoyTheunissen.UnityHaptics.Curves
 
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
-            
             serializedObject.Update();
 
-            EditorGUILayout.PropertyField(animationCurve);
+            EditorGUILayout.PropertyField(animationCurve, GUIContent.none);
             
             serializedObject.ApplyModifiedProperties();
         }
