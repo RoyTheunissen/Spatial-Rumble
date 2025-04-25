@@ -1,5 +1,9 @@
 using UnityEngine;
 
+#if SCAFFOLDING_TWEENING
+using RoyTheunissen.Scaffolding.Tweening;
+#endif // SCAFFOLDING_TWEENING
+
 namespace RoyTheunissen.UnityHaptics.Rumbling
 {
     /// <summary>
@@ -21,24 +25,26 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 
         public override float Opacity => base.Opacity * opacityMultiplier;
         
-        // TODO
-        // private Tween cachedTween;
-        // public Tween Tween
-        // {
-        //     get
-        //     {
-        //         if (cachedTween == null)
-        //             cachedTween = new Tween(f => opacityMultiplier = f).SetContinuous(true).SkipToIn();
-        //         return cachedTween;
-        //     }
-        // }
+#if SCAFFOLDING_TWEENING
+        private Tween cachedTween;
+        public Tween Tween
+        {
+            get
+            {
+                if (cachedTween == null)
+                    cachedTween = new Tween(f => opacityMultiplier = f).SetContinuous(true).SkipToIn();
+                return cachedTween;
+            }
+        }
+#endif // SCAFFOLDING_TWEENING
 
         public override void Cleanup()
         {
             base.Cleanup();
             
-            // TODO
-            //cachedTween.Cleanup();
+#if SCAFFOLDING_TWEENING
+            cachedTween.Cleanup();
+#endif // SCAFFOLDING_TWEENING
         }
 
         protected override void GetRumbleInternal(ref RumbleProperties rumbleProperties)
