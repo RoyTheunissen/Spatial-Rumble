@@ -73,8 +73,8 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 #endif // UNITY_EDITOR
 
 #if GRAPH_RUMBLE
-            Graph.Create("Low Frequency Rumble", Color.red, () => rumblePropertiesCombined.LowFrequencyRumble)
-                .AddLine("High Frequency Rumble", Color.green, () => rumblePropertiesCombined.HighFrequencyRumble);
+            Graph.CreateGlobal("Low Frequency Rumble", Color.red, () => rumblePropertiesCombined.LowFrequencyRumble)
+                .AddLine("High Frequency Rumble", Color.green, GraphLine.Modes.ContinuousLine, () => rumblePropertiesCombined.HighFrequencyRumble);
 #endif // GRAPH_RUMBLE
         }
 
