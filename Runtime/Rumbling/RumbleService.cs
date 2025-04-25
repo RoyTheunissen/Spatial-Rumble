@@ -91,6 +91,13 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 
             ResetAllHaptics();
         }
+        
+        public void Update()
+        {
+            CullFinishedRumblePlaybacks();
+            ComputeRumbleProperties();
+            PassRumbleOnToHardware(rumblePropertiesCombined);
+        }
 
 #if UNITY_EDITOR
         private void HandleEditorPauseStateChangedEvent(UnityEditor.PauseState pauseState)
@@ -143,13 +150,6 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         public void UnregisterListener(RumbleListener listener)
         {
             listeners.Remove(listener);
-        }
-
-        private void Update()
-        {
-            CullFinishedRumblePlaybacks();
-            ComputeRumbleProperties();
-            PassRumbleOnToHardware(rumblePropertiesCombined);
         }
 
         private void CullFinishedRumblePlaybacks()

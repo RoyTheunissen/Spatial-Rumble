@@ -1,3 +1,4 @@
+using System;
 using RoyTheunissen.UnityHaptics.Curves;
 using UnityEngine;
 
@@ -11,7 +12,10 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     /// </summary>
     public sealed class RumbleServiceComponent : MonoBehaviour, IRumbleService
     {
+        [Tooltip("Whether to automatically register this component as the HapticsServices.Rumble service in " +
+                 "Awake / unregister it in OnDestroy. Disable this if you want control over the execution order.")]
         [SerializeField] private bool autoRegister = true;
+        
         [SerializeField] private CurveAsset rumbleRollOff;
 
         public bool EnableRumble
@@ -23,7 +27,15 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         private bool isInitialized;
 
         private RumbleService instance;
-        private RumbleService Instance => instance;
+        private RumbleService Instance
+        {
+            get
+            {
+                Initialize();
+                
+                return instance;
+            }
+        }
 
         private void Awake()
         {
@@ -49,12 +61,18 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
             isInitialized = true;
 
             instance = new RumbleService(rumbleRollOff);
+            instance.Initialize();
         }
 
         public void Cleanup()
         {
             if (isInitialized)
                 instance.Cleanup();
+        }
+
+        private void Update()
+        {
+            Instance.Update();
         }
 
         public void Pause(object owner)
