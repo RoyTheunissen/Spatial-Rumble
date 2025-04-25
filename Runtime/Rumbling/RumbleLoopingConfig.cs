@@ -10,8 +10,8 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     {
         private void Reset()
         {
-            curveLF.postWrapMode = WrapMode.Loop;
-            curveHF.postWrapMode = WrapMode.Loop;
+            curveLowFrequency.postWrapMode = WrapMode.Loop;
+            curveHighFrequency.postWrapMode = WrapMode.Loop;
         }
     }
     
@@ -44,10 +44,10 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         protected override void GetRumbleInternal(ref RumbleProperties rumbleProperties)
         {
             if (Config.UseLowFrequency)
-                rumbleProperties.LowFrequencyRumble = Config.CurveLF.Evaluate(Time);
+                rumbleProperties.LowFrequencyRumble = Config.CurveLowFrequency.Evaluate(Time);
             
             if (Config.UseHighFrequency)
-                rumbleProperties.HighFrequencyRumble = Config.CurveHF.Evaluate(Time);
+                rumbleProperties.HighFrequencyRumble = Config.CurveHighFrequency.Evaluate(Time);
         }
     }
 }

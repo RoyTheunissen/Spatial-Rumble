@@ -8,7 +8,7 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     [CreateAssetMenu(fileName = "RumbleOneOffConfig", menuName = MenuPaths.ScriptableObjectsRumble + "Rumble Config (One-Off)")]
     public sealed class RumbleOneOffConfig : RumbleConfigGeneric<RumbleOneOffPlayback>
     {
-        public float Duration => Mathf.Max(CurveLF.Duration, CurveHF.Duration);
+        public float Duration => Mathf.Max(CurveLowFrequency.Duration, CurveHighFrequency.Duration);
     }
     
     public sealed class RumbleOneOffPlayback : RumblePlaybackWithConfig<RumbleOneOffConfig, RumbleOneOffPlayback>
@@ -20,10 +20,10 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         protected override void GetRumbleInternal(ref RumbleProperties rumbleProperties)
         {
             if (Config.UseLowFrequency)
-                rumbleProperties.LowFrequencyRumble = Config.CurveLF.Evaluate(Time);
+                rumbleProperties.LowFrequencyRumble = Config.CurveLowFrequency.Evaluate(Time);
             
             if (Config.UseHighFrequency)
-                rumbleProperties.HighFrequencyRumble = Config.CurveHF.Evaluate(Time);
+                rumbleProperties.HighFrequencyRumble = Config.CurveHighFrequency.Evaluate(Time);
         }
     }
 }

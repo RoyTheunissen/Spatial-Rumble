@@ -85,6 +85,12 @@ namespace RoyTheunissen.UnityHaptics.Curves
                 return AnimationCurve[AnimationCurve.length - 1].time;
             }
         }
+
+        public CurveReference()
+        {
+            mode = Modes.NewCurve;
+            curve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
+        }
         
         public CurveReference(params Keyframe[] keyframes)
         {
