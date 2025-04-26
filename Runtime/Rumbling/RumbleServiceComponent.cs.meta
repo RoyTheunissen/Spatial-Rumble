@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - rumbleRollOff: {fileID: 11400000, guid: e956d36eb92ed774eb37bc324cd82204, type: 2}
-  executionOrder: 0
+  executionOrder: -850
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
