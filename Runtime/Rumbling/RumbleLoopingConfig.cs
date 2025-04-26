@@ -22,6 +22,11 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
     public sealed class RumbleLoopingPlayback : RumblePlaybackWithConfig<RumbleLoopingConfig, RumbleLoopingPlayback>
     {
         private float opacityMultiplier = 1.0f;
+        public float OpacityMultiplier
+        {
+            get => opacityMultiplier;
+            set => opacityMultiplier = value;
+        }
 
         public override float Opacity => base.Opacity * opacityMultiplier;
         
