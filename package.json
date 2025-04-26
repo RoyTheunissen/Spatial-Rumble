@@ -1,23 +1,24 @@
 {
-  "name": "com.roytheunissen.unity-haptics",
-  "displayName": "Unity Haptics",
+  "name": "com.roytheunissen.spatial-rumble",
+  "displayName": "Spatial Rumble",
   "version": "0.0.1",
   "unity": "2021.3",
-  "description": "Open source system for emitting effects like vibration in a spatialized way",
+  "description": "Open source system for emitting rumble/vibration effects in a spatialized way",
   "keywords": [
-    "haptics",
 	"rumble",
-	"vibration"
+	"vibration",
+	"haptics",
+	"system"
   ],
   "author": {
     "name": "Roy Theunissen",
     "url": "https://www.roytheunissen.com"
   },
-  "category": "haptics",
-  "homepage": "https://github.com/RoyTheunissen/UnityPackage-Template",
+  "category": "input",
+  "homepage": "https://github.com/RoyTheunissen/Spatial-Rumble",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RoyTheunissen/UnityPackage-Template"
+    "url": "https://github.com/RoyTheunissen/Spatial-Rumble"
   },
-  "bugs": "https://github.com/RoyTheunissen/UnityPackage-Template/issues"
+  "bugs": "https://github.com/RoyTheunissen/Spatial-Rumble/issues"
 }
