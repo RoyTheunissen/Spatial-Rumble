@@ -3,8 +3,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Haptics;
+#endif // ENABLE_INPUT_SYSTEM
 
 #if GRAPH_RUMBLE
 using RoyTheunissen.Graphing;
@@ -35,6 +38,8 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
         private List<RumblePlayback> playbacks = new();
         
         private RumbleProperties rumblePropertiesCombined;
+        public RumbleProperties RumbleProperties => rumblePropertiesCombined;
+
         private RumbleProperties rumblePropertiesIndividual;
         
         private List<object> pausers = new();
@@ -204,6 +209,7 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 
         private void PassRumbleOnToHardware(RumbleProperties rumbleProperties)
         {
+#if ENABLE_INPUT_SYSTEM
             Gamepad currentGamepad = Gamepad.current;
             if (currentGamepad == null)
                 return;
@@ -221,6 +227,7 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
 
             motors.ResumeHaptics();
             motors.SetMotorSpeeds(rumbleProperties.LowFrequencyRumble, rumbleProperties.HighFrequencyRumble);
+#endif // ENABLE_INPUT_SYSTEM
         }
 
         public void AddRumble(IRumble rumble)

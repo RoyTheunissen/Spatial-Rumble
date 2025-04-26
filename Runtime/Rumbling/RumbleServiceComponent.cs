@@ -24,6 +24,8 @@ namespace RoyTheunissen.UnityHaptics.Rumbling
             set => Instance.EnableRumble = value;
         }
 
+        public RumbleProperties RumbleProperties => Instance.RumbleProperties;
+
         private bool isInitialized;
 
         private RumbleService instance;
