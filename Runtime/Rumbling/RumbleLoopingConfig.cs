@@ -4,7 +4,7 @@ using UnityEngine;
 using RoyTheunissen.Scaffolding.Tweening;
 #endif // SCAFFOLDING_TWEENING
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     /// <summary>
     /// Represents the settings for a rumble that plays for a variable amount of time.

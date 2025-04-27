@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling.Sequencing
+namespace RoyTheunissen.SpatialRumble.Rumbling.Sequencing
 {
     /// <summary>
     /// Responsible for performing the runtime functionality associated with a serialized timeline clip.

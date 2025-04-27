@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     /// <summary>
     /// Signifies from what position local rumbles should be felt from to calculate attenuation and direction.

@@ -1,4 +1,4 @@
-namespace RoyTheunissen.UnityHaptics.Rumbling.Sequencing
+namespace RoyTheunissen.SpatialRumble.Rumbling.Sequencing
 {
     public sealed class RumbleLoopingBehaviour : RumbleBehaviour
     {

@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Curves
+namespace RoyTheunissen.SpatialRumble.Curves
 {
     /// <summary>
     /// Draws a curve reference in a more compact way.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Curves
+namespace RoyTheunissen.SpatialRumble.Curves
 {
     /// <summary>
     /// Acts like an Animation Curve except it's more reusable.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     public interface IRumbleService
     {

@@ -3,7 +3,7 @@ using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     /// <summary>
     /// Draws a nice preview of the rumble in the clip.

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     /// <summary>
     /// A rumble to be combined with other rumbles and sent to the hardware. 

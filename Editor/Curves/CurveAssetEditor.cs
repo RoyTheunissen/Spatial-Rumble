@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Curves
+namespace RoyTheunissen.SpatialRumble.Curves
 {
     /// <summary>
     /// Draws an animation curve to serve as an asset so you can re-use it.

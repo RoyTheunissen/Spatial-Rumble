@@ -1,10 +1,11 @@
 {
-    "name": "RoyTheunissen.UnityHaptics.Editor",
-    "rootNamespace": "RoyTheunissen.UnityHaptics",
+    "name": "RoyTheunissen.SpatialRumble",
+    "rootNamespace": "RoyTheunissen.SpatialRumble",
     "references": [
-        "GUID:1ab2c615de29a28499559ccd18bf09e5",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
         "GUID:f06555f75b070af458a003d92f9efb00",
-        "GUID:02f771204943f4a40949438e873e3eff"
+        "GUID:cfb27f12ae60ab9439e723272ec29f06",
+        "GUID:d29af810871b7284ba63192d4954ab76"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

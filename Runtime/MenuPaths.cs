@@ -1,4 +1,4 @@
-namespace RoyTheunissen.UnityHaptics
+namespace RoyTheunissen.SpatialRumble
 {
     public static class MenuPaths
     {

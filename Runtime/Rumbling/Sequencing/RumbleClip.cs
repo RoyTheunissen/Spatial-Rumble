@@ -1,4 +1,4 @@
-﻿using RoyTheunissen.UnityHaptics.Rumbling;
+﻿using RoyTheunissen.SpatialRumble.Rumbling;
 using UnityEngine;
 using UnityEngine.Playables;
 

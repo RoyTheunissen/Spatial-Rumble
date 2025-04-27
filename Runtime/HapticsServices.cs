@@ -1,8 +1,8 @@
 using System;
-using RoyTheunissen.UnityHaptics.Rumbling;
+using RoyTheunissen.SpatialRumble.Rumbling;
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics
+namespace RoyTheunissen.SpatialRumble
 {
     /// <summary>
     /// Class that exposes the instances of the various haptics related systems.

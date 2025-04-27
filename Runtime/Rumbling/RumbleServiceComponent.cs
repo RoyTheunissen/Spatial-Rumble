@@ -1,8 +1,8 @@
 using System;
-using RoyTheunissen.UnityHaptics.Curves;
+using RoyTheunissen.SpatialRumble.Curves;
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     /// <summary>
     /// Responsible for managing the playback of rumble effects and passing them on to the hardware.

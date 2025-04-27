@@ -1,5 +1,5 @@
-using RoyTheunissen.UnityHaptics.Rumbling;
-using RoyTheunissen.UnityHaptics.Rumbling.Sequencing;
+using RoyTheunissen.SpatialRumble.Rumbling;
+using RoyTheunissen.SpatialRumble.Rumbling.Sequencing;
 using UnityEngine;
 using UnityEngine.Playables;
 

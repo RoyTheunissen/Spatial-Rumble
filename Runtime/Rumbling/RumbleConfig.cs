@@ -1,7 +1,7 @@
 using UnityEngine;
-using RoyTheunissen.UnityHaptics.Curves;
+using RoyTheunissen.SpatialRumble.Curves;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     /// <summary>
     /// A 'rumble' that you can play back.

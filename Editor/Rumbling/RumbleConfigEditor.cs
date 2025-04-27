@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RoyTheunissen.UnityHaptics.Rumbling
+namespace RoyTheunissen.SpatialRumble.Rumbling
 {
     [CustomEditor(typeof(RumbleConfigBase), true)]
     public sealed class RumbleConfigEditor : Editor
