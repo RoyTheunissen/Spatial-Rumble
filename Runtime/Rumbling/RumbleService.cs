@@ -23,12 +23,19 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
     /// </summary>
     public class RumbleService : IRumbleService
     {
-        public const float SpatialRadiusDefault = 15;
+        public const float SpatialRadiusRecommendedDefault = 15;
         
         public const float RumbleGracePeriod = 3;
 
         private readonly AnimationCurve rumbleRollOff;
         
+        private float spatialRadiusDefault = SpatialRadiusRecommendedDefault;
+        public float SpatialRadiusDefault
+        {
+            get => spatialRadiusDefault;
+            set => spatialRadiusDefault = value;
+        }
+
         private List<RumbleListener> listeners = new();
         private bool HasListener => listeners.Count > 0;
         private RumbleListener Listener => HasListener ? listeners[listeners.Count - 1] : null;
@@ -58,9 +65,10 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         
         private bool isCleanedUp;
 
-        public RumbleService(AnimationCurve rumbleRollOff)
+        public RumbleService(AnimationCurve rumbleRollOff, float spatialRadiusDefault = SpatialRadiusRecommendedDefault)
         {
             this.rumbleRollOff = rumbleRollOff;
+            this.spatialRadiusDefault = spatialRadiusDefault;
             
             startTime = Time.time;
             

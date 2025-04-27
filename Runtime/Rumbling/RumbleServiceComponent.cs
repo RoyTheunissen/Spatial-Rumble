@@ -16,7 +16,13 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
                  "Awake / unregister it in OnDestroy. Disable this if you want control over the execution order.")]
         [SerializeField] private bool autoRegister = true;
         
+        [Space]
+        [Tooltip("How the intensity of a rumble playback rolls off over distance to the rumble listener.")]
         [SerializeField] private CurveAsset rumbleRollOff;
+        
+        [Tooltip("The spatial radius that rumbles have when none is specified explicitly.")]
+        [SerializeField] private float spatialRadiusDefault = RumbleService.SpatialRadiusRecommendedDefault;
+        public float SpatialRadiusDefault => spatialRadiusDefault;
 
         public bool EnableRumble
         {
@@ -62,7 +68,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
 
             isInitialized = true;
 
-            instance = new RumbleService(rumbleRollOff);
+            instance = new RumbleService(rumbleRollOff, spatialRadiusDefault);
         }
         
         public void Cleanup()

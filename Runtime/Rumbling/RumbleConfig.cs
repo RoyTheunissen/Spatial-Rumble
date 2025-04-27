@@ -40,9 +40,9 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         [Tooltip("By default, the radius is specified when")]
         [SerializeField] private bool overrideSpatialRadius;
         [SerializeField]
-        private float spatialRadiusOverride = RumbleService.SpatialRadiusDefault;
+        private float spatialRadiusOverride = RumbleService.SpatialRadiusRecommendedDefault;
         public float SpatialRadius =>
-            overrideSpatialRadius ? spatialRadiusOverride : RumbleService.SpatialRadiusDefault;
+            overrideSpatialRadius ? spatialRadiusOverride : HapticsServices.Rumble.SpatialRadiusDefault;
     }
     
     public abstract class RumbleConfigGeneric<PlaybackType> : RumbleConfigBase

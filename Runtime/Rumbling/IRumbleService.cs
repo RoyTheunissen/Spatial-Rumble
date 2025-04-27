@@ -6,6 +6,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
     {
         bool EnableRumble { get; set; }
         RumbleProperties RumbleProperties { get; }
+        float SpatialRadiusDefault { get; }
         void Cleanup();
         void Update();
         
