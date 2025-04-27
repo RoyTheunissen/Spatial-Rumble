@@ -42,7 +42,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         [SerializeField]
         private float spatialRadiusOverride = RumbleService.SpatialRadiusRecommendedDefault;
         public float SpatialRadius =>
-            overrideSpatialRadius ? spatialRadiusOverride : HapticsServices.Rumble.SpatialRadiusDefault;
+            overrideSpatialRadius ? spatialRadiusOverride : RumbleService.Instance.SpatialRadiusDefault;
     }
     
     public abstract class RumbleConfigGeneric<PlaybackType> : RumbleConfigBase
@@ -50,7 +50,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
     {
         public PlaybackType Play(Transform origin = null, float opacity = 1.0f)
         {
-            return HapticsServices.Rumble.Play<PlaybackType>(this, origin, opacity);
+            return RumbleService.Instance.Play<PlaybackType>(this, origin, opacity);
         }
     }
 }

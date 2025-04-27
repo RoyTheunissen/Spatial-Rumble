@@ -11,7 +11,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         
         private void Start()
         {
-            if (HapticsServices.Rumble == null)
+            if (RumbleService.Instance == null)
             {
                 Debug.LogError(
                     $"Rumble Listener '{name}' tried to register itself at the rumble service, " +
@@ -19,14 +19,14 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
             }
             else
             {
-                HapticsServices.Rumble.RegisterListener(this);
+                RumbleService.Instance.RegisterListener(this);
             }
         }
         
         private void OnDestroy()
         {
-            if (HapticsServices.Rumble != null)
-                HapticsServices.Rumble.UnregisterListener(this);
+            if (RumbleService.Instance != null)
+                RumbleService.Instance.UnregisterListener(this);
         }
     }
 }

@@ -50,13 +50,13 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
             Initialize();
 
             if (autoRegister)
-                HapticsServices.Rumble = this;
+                RumbleService.Instance = this;
         }
 
         private void OnDestroy()
         {
-            if (autoRegister && ReferenceEquals(HapticsServices.Rumble, this))
-                HapticsServices.Rumble = null;
+            if (autoRegister && ReferenceEquals(RumbleService.Instance, this))
+                RumbleService.Instance = null;
             
             Cleanup();
         }

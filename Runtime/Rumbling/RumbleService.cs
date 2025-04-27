@@ -64,6 +64,26 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         }
         
         private bool isCleanedUp;
+        
+        [NonSerialized] private static IRumbleService cachedInstance;
+        /// <summary>
+        /// The currently active IRumbleService instance that all rumble playback should report to.
+        /// </summary>
+        public static IRumbleService Instance
+        {
+            get => cachedInstance;
+            set
+            {
+                if (cachedInstance != null && value != null)
+                {
+                    Debug.LogWarning($"You are overriding the Rumble Service from an instance of " +
+                                     $"'{cachedInstance.GetType()}' to an instance of '{value.GetType()}'. " +
+                                     $"Is this intended?");
+                }
+                
+                cachedInstance = value;
+            }
+        }
 
         public RumbleService(AnimationCurve rumbleRollOff, float spatialRadiusDefault = SpatialRadiusRecommendedDefault)
         {
