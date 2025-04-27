@@ -20,5 +20,12 @@
     "type": "git",
     "url": "https://github.com/RoyTheunissen/Spatial-Rumble"
   },
-  "bugs": "https://github.com/RoyTheunissen/Spatial-Rumble/issues"
+  "bugs": "https://github.com/RoyTheunissen/Spatial-Rumble/issues",
+  "samples": [
+        {
+            "displayName": "Examples",
+            "description": "Contains examples for how to emit spatial rumble either through a Rumble Source component or through code.",
+            "path": "Samples~/Spatial Rumble Examples"
+        }
+    ]
 }
