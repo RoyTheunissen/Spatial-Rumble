@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - rumbleRollOff: {fileID: 11400000, guid: e956d36eb92ed774eb37bc324cd82204, type: 2}
   executionOrder: -850
-  icon: {instanceID: 0}
+  icon: {fileID: 2800000, guid: b172eece017379f46bd0fd78a5e5df1c, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
