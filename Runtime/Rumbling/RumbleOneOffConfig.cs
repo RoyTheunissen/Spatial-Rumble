@@ -5,7 +5,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
     /// <summary>
     /// Represents the settings for a brief rumble that plays once.
     /// </summary>
-    [CreateAssetMenu(fileName = "RumbleOneOffConfig", menuName = MenuPaths.ScriptableObjectsRumble + "Rumble Config (One-Off)")]
+    [CreateAssetMenu(fileName = "RumbleOneOffConfig", menuName = MenuPaths.ScriptableObjects + "Rumble Config (One-Off)")]
     public sealed class RumbleOneOffConfig : RumbleConfigGeneric<RumbleOneOffPlayback>
     {
         public float Duration => Mathf.Max(CurveLowFrequency.Duration, CurveHighFrequency.Duration);

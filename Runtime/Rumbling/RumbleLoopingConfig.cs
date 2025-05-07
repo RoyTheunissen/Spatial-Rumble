@@ -9,7 +9,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
     /// <summary>
     /// Represents the settings for a rumble that plays for a variable amount of time.
     /// </summary>
-    [CreateAssetMenu(fileName = "RumbleLoopingConfig", menuName = MenuPaths.ScriptableObjectsRumble + "Rumble Config (Looping)")]
+    [CreateAssetMenu(fileName = "RumbleLoopingConfig", menuName = MenuPaths.ScriptableObjects + "Rumble Config (Looping)")]
     public sealed class RumbleLoopingConfig : RumbleConfigGeneric<RumbleLoopingPlayback>
     {
         private void Reset()

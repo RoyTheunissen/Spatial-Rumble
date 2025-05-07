@@ -5,7 +5,7 @@ namespace RoyTheunissen.SpatialRumble.Curves
     /// <summary>
     /// Acts like an Animation Curve except it's more reusable.
     /// </summary>
-    [CreateAssetMenu(fileName = "CurveAsset", menuName = "ScriptableObject/Unity Haptics/Curve Asset")]
+    [CreateAssetMenu(fileName = "CurveAsset", menuName = MenuPaths.ScriptableObjects + "Curve Asset")]
     public class CurveAsset : ScriptableObject 
     {
         [SerializeField]
