@@ -6,7 +6,7 @@ namespace RoyTheunissen.SpatialRumble.Curves
     /// <summary>
     /// Draws an animation curve to serve as an asset so you can re-use it.
     /// </summary>
-    [CustomEditor(typeof(CurveAsset))]
+    [CustomEditor(typeof(RumbleCurveAsset))]
     public class CurveAssetEditor : Editor 
     {
         private SerializedProperty animationCurve;

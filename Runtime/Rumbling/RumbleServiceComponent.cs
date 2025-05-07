@@ -18,7 +18,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         
         [Space]
         [Tooltip("How the intensity of a rumble playback rolls off over distance to the rumble listener.")]
-        [SerializeField] private CurveAsset rumbleRollOff;
+        [SerializeField] private RumbleCurveAsset rumbleRollOff;
         
         [Tooltip("The spatial radius that rumbles have when none is specified explicitly.")]
         [SerializeField] private float spatialRadiusDefault = RumbleService.SpatialRadiusRecommendedDefault;

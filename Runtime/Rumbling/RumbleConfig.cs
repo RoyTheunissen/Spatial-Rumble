@@ -22,16 +22,16 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         public bool UseLowFrequency => useLowFrequency;
         
         [SerializeField]
-        protected CurveReference curveLowFrequency = new(new Keyframe(0.0f, 0.0f), new Keyframe(0.5f, 1.0f), new Keyframe(1.0f, 0.0f));
-        public CurveReference CurveLowFrequency => curveLowFrequency;
+        protected RumbleCurveReference curveLowFrequency = new(new Keyframe(0.0f, 0.0f), new Keyframe(0.5f, 1.0f), new Keyframe(1.0f, 0.0f));
+        public RumbleCurveReference CurveLowFrequency => curveLowFrequency;
         
         [Header("High Frequency")]
         [SerializeField] private bool useHighFrequency;
         public bool UseHighFrequency => useHighFrequency;
         
         [SerializeField]
-        protected CurveReference curveHighFrequency = new(new Keyframe(0.0f, 0.0f), new Keyframe(0.5f, 1.0f), new Keyframe(1.0f, 0.0f));
-        public CurveReference CurveHighFrequency => curveHighFrequency;
+        protected RumbleCurveReference curveHighFrequency = new(new Keyframe(0.0f, 0.0f), new Keyframe(0.5f, 1.0f), new Keyframe(1.0f, 0.0f));
+        public RumbleCurveReference CurveHighFrequency => curveHighFrequency;
 
         [Header("Spatialization")]
         [SerializeField, Range(0, 1)] private float spatialBlend = 1.0f;

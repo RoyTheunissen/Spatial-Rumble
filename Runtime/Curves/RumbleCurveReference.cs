@@ -5,10 +5,10 @@ namespace RoyTheunissen.SpatialRumble.Curves
 {
     /// <summary>
     /// Acts like an Animation Curve except internally you can define a brand-new animation curve or re-use one from
-    /// a Curve Asset.
+    /// a Rumble Curve Asset.
     /// </summary>
     [Serializable]
-    public sealed class CurveReference 
+    public sealed class RumbleCurveReference 
     {
         public enum Modes
         {
@@ -19,7 +19,7 @@ namespace RoyTheunissen.SpatialRumble.Curves
         [SerializeField] private Modes mode;
 
         [SerializeField] private AnimationCurve curve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
-        [SerializeField] private CurveAsset curveAsset;
+        [SerializeField] private RumbleCurveAsset curveAsset;
 
         public AnimationCurve AnimationCurve
         {
@@ -86,13 +86,13 @@ namespace RoyTheunissen.SpatialRumble.Curves
             }
         }
 
-        public CurveReference()
+        public RumbleCurveReference()
         {
             mode = Modes.NewCurve;
             curve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
         }
         
-        public CurveReference(params Keyframe[] keyframes)
+        public RumbleCurveReference(params Keyframe[] keyframes)
         {
             mode = Modes.NewCurve;
             curve = new AnimationCurve(keyframes);
@@ -103,9 +103,9 @@ namespace RoyTheunissen.SpatialRumble.Curves
             return AnimationCurve.Evaluate(time);
         }
 
-        public static implicit operator AnimationCurve(CurveReference curveAsset)
+        public static implicit operator AnimationCurve(RumbleCurveReference rumbleCurveReference)
         {
-            return curveAsset?.AnimationCurve;
+            return rumbleCurveReference?.AnimationCurve;
         }
     }
 }

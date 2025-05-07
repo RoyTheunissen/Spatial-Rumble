@@ -6,7 +6,7 @@ namespace RoyTheunissen.SpatialRumble.Curves
     /// <summary>
     /// Draws a curve reference in a more compact way.
     /// </summary>
-    [CustomPropertyDrawer(typeof(CurveReference))]
+    [CustomPropertyDrawer(typeof(RumbleCurveReference))]
     public class CurveReferencePropertyDrawer : PropertyDrawer
     {
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
@@ -29,9 +29,9 @@ namespace RoyTheunissen.SpatialRumble.Curves
             
             using (new EditorGUI.IndentLevelScope())
             {
-                if (modeProperty.intValue == (int)CurveReference.Modes.NewCurve)
+                if (modeProperty.intValue == (int)RumbleCurveReference.Modes.NewCurve)
                     EditorGUI.PropertyField(secondLineRect, curveProperty);
-                else if (modeProperty.intValue == (int)CurveReference.Modes.CurveAsset)
+                else if (modeProperty.intValue == (int)RumbleCurveReference.Modes.CurveAsset)
                     EditorGUI.PropertyField(secondLineRect, curveAssetProperty);
             }
             

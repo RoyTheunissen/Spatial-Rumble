@@ -5,8 +5,8 @@ namespace RoyTheunissen.SpatialRumble.Curves
     /// <summary>
     /// Acts like an Animation Curve except it's more reusable.
     /// </summary>
-    [CreateAssetMenu(fileName = "CurveAsset", menuName = MenuPaths.ScriptableObjects + "Curve Asset")]
-    public class CurveAsset : ScriptableObject 
+    [CreateAssetMenu(fileName = "RumbleCurveAsset", menuName = MenuPaths.ScriptableObjects + "Rumble Curve Asset")]
+    public class RumbleCurveAsset : ScriptableObject 
     {
         [SerializeField]
         private AnimationCurve animationCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
@@ -62,7 +62,7 @@ namespace RoyTheunissen.SpatialRumble.Curves
             }
         }
 
-        public static implicit operator AnimationCurve(CurveAsset curveAsset)
+        public static implicit operator AnimationCurve(RumbleCurveAsset curveAsset)
         {
             return curveAsset == null ? null : curveAsset.AnimationCurve;
         }
