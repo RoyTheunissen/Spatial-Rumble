@@ -3,7 +3,7 @@
   "displayName": "Spatial Rumble",
   "version": "0.0.1",
   "unity": "2021.3",
-  "description": "Open source system for emitting rumble/vibration effects in a spatialized way",
+  "description": "System for emitting pre-defined controller vibrations/rumbles in a spatialized way.",
   "keywords": [
 	"rumble",
 	"vibration",
