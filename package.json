@@ -24,7 +24,7 @@
   "samples": [
         {
             "displayName": "Examples",
-            "description": "Contains examples for how to emit spatial rumble either through a Rumble Source component or through code.",
+            "description": "Contains examples for how to emit spatial rumble either through a Rumble Source component or through code.\n\n(Note that this was made for BRP. It will still work in URP but the materials will be pink, you'd need to reassign them)",
             "path": "Samples~/Spatial Rumble Examples"
         }
     ]
