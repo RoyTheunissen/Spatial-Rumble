@@ -102,9 +102,9 @@ See the `Rumble Emitter Continuous` object in the `Spatial Rumble Sample - From 
 
 ### Unity Version
 
-This system was developed for Unity 2022, it's recommended that you use it in Unity 2022 or upwards.
+This system was developed for Unity 2022, it's recommended that you use it in Unity 2022 or upwards. It's been tested in Unity 6 as well and seems to work the same there.
 
-If you use an older or a newer version of Unity and are running into trouble, feel free to reach out and I'll see what I can do to help.
+If you use an older version of Unity and are running into trouble, feel free to reach out and I'll see what I can do to help.
 
 ### Passing the rumble values to the hardware
 The Unity Input System package is currently optional. If it's added to your project then `ENABLE_INPUT_SYSTEM` will be defined, and then it will automaticaly send the rumble values to the hardware via the Unity Input System. See `RumbleService.PassRumbleOnToHardware` to see how that works. You can also choose not to use the Unity Input System and use some other solution such as [Rewired](https://assetstore.unity.com/packages/tools/utilities/rewired-21676) instead. In that case you can use Spatial-Rumble to just determine the desired rumble values and then poll those every frame and send them to the hardware any way that you wish. Supporting Rewired natively is part of the [wishlist](#wishlist).
