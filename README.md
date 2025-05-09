@@ -32,6 +32,8 @@ I found myself making the same solution at different companies: a system where y
 
 Then based on the distance between the rumble's origin and the rumble listener, an attenuation is applied. The further away the rumble is from the camera or the player (wherever your Listener is), the softer the rumble gets.
 
+You can emit rumbles via a `Rumble Source` component or [via code](#dispatching-rumbles-from-code).
+
 
 https://github.com/user-attachments/assets/b8ebbf51-7781-4c4b-9e8e-92db9f423a83
 
