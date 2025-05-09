@@ -35,6 +35,10 @@ Then based on the distance between the rumble's origin and the rumble listener, 
 
 https://github.com/user-attachments/assets/b8ebbf51-7781-4c4b-9e8e-92db9f423a83
 
+_Demonstration of how rumble attenuates based on distance. The red graph signifies a Low Frequency rumble being emitted continuously in space, and the green graph signifies a High Frequency rumble being emitted continuously in space._
+
+If you're wondering how to make a graph like that, I used [Value-Graphing](https://github.com/RoyTheunissen/Value-Graphing).
+
 
 ## Getting Started
 
