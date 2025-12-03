@@ -138,6 +138,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         
         private static void ResetAllHaptics()
         {
+#if ENABLE_INPUT_SYSTEM
             Gamepad currentGamepad = Gamepad.current;
             if (currentGamepad == null)
                 return;
@@ -149,6 +150,7 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
             // Reset haptics otherwise whatever rumble we passed along lasts will stick around. Super annoying while
             // working in the editor...
             motors.ResetHaptics();
+#endif // ENABLE_INPUT_SYSTEM
         }
 
         public void Pause(object owner)
