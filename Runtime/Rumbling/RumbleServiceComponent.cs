@@ -117,5 +117,15 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         {
             return Instance.Play<PlaybackType>(config, origin, opacity);
         }
+
+        public void RegisterCustomRumbleHandler(ICustomRumbleHandler customRumbleHandler)
+        {
+            Instance.RegisterCustomRumbleHandler(customRumbleHandler);
+        }
+
+        public void UnregisterCustomRumbleHandler(ICustomRumbleHandler customRumbleHandler)
+        {
+            Instance.UnregisterCustomRumbleHandler(customRumbleHandler);
+        }
     }
 }

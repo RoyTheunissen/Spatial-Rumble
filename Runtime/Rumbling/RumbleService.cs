@@ -65,6 +65,8 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         
         private bool isCleanedUp;
         
+        private readonly List<ICustomRumbleHandler> customRumbleHandlers = new();
+        
         [NonSerialized] private static IRumbleService cachedInstance;
         /// <summary>
         /// The currently active IRumbleService instance that all rumble playback should report to.
@@ -237,6 +239,16 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
             }
         }
 
+        public void RegisterCustomRumbleHandler(ICustomRumbleHandler customRumbleHandler)
+        {
+            customRumbleHandlers.Add(customRumbleHandler);
+        }
+
+        public void UnregisterCustomRumbleHandler(ICustomRumbleHandler customRumbleHandler)
+        {
+            customRumbleHandlers.Remove(customRumbleHandler);
+        }
+
         private void PassRumbleOnToHardware(RumbleProperties rumbleProperties)
         {
 #if ENABLE_INPUT_SYSTEM
@@ -258,6 +270,12 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
             motors.ResumeHaptics();
             motors.SetMotorSpeeds(rumbleProperties.LowFrequencyRumble, rumbleProperties.HighFrequencyRumble);
 #endif // ENABLE_INPUT_SYSTEM
+
+            // If any custom rumble handlers are specified, allow them to pass on the rumble to the hardware.
+            for (int i = 0; i < customRumbleHandlers.Count; i++)
+            {
+                customRumbleHandlers[i].PassRumbleOnToHardware(rumbleProperties);
+            }
         }
 
         public void AddRumble(IRumble rumble)

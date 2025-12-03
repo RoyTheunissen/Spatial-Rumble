@@ -17,6 +17,9 @@ namespace RoyTheunissen.SpatialRumble.Rumbling
         void AddRumble(IRumble rumble);
         void RemoveRumble(IRumble rumble);
 
+        void RegisterCustomRumbleHandler(ICustomRumbleHandler customRumbleHandler);
+        void UnregisterCustomRumbleHandler(ICustomRumbleHandler customRumbleHandler);
+
         PlaybackType Play<PlaybackType>(RumbleConfigBase config, Transform origin, float opacity)
             where PlaybackType : RumblePlayback, new();
     }
